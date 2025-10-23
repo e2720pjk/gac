@@ -140,5 +140,5 @@ def test_init_cli_lmstudio_optional_api_key_and_url(monkeypatch):
                 assert result.exit_code == 0
                 env_text = env_path.read_text()
                 assert "GAC_MODEL='lm-studio:deepseek-r1-distill-qwen-7b'" in env_text
-                assert "LMSTUDIO_API_URL='http://localhost:1234'" in env_text
-                assert "LMSTUDIO_API_KEY" not in env_text
+                assert "LM-STUDIO_API_URL='http://localhost:1234'" in env_text
+                assert "LM-STUDIO_API_KEY" not in env_text

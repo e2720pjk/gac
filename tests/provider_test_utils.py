@@ -196,7 +196,7 @@ def create_provider_test_cases() -> list[ProviderTestCase]:
         ProviderTestCase(
             name="lmstudio",
             module_name="lmstudio",
-            env_var="LMSTUDIO_API_KEY",  # Optional API key for remote LM Studio
+            env_var="LM-STUDIO_API_KEY",  # Optional API key for remote LM Studio
             function_name="call_lmstudio_api",
             test_model="model",
             import_function=call_lmstudio_api,

@@ -34,7 +34,7 @@ def init() -> None:
     providers = [
         ("Anthropic", "claude-haiku-4-5"),
         ("Cerebras", "qwen-3-coder-480b"),
-        ("Chutes.ai", "zai-org/GLM-4.6-FP8"),
+        ("Chutes", "zai-org/GLM-4.6-FP8"),
         ("Gemini", "gemini-2.5-flash"),
         ("Groq", "meta-llama/llama-4-maverick-17b-128e-instruct"),
         ("LM Studio", "gemma3"),
@@ -92,8 +92,8 @@ def init() -> None:
             click.echo("LM Studio URL entry cancelled. Exiting.")
             return
         url_to_save = url.strip() if url.strip() else url_default
-        set_key(str(GAC_ENV_PATH), "LMSTUDIO_API_URL", url_to_save)
-        click.echo(f"Set LMSTUDIO_API_URL={url_to_save}")
+        set_key(str(GAC_ENV_PATH), "LM-STUDIO_API_URL", url_to_save)
+        click.echo(f"Set LM-STUDIO_API_URL={url_to_save}")
 
     api_key_prompt = "Enter your API key (input hidden, can be set later):"
     if is_ollama or is_lmstudio:

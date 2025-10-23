@@ -42,7 +42,7 @@ class TestLMStudioProviderMocked(BaseProviderTest):
 
     @property
     def api_key_env_var(self) -> str | None:
-        return "LMSTUDIO_API_KEY"
+        return "LM-STUDIO_API_KEY"
 
     @property
     def model_name(self) -> str:
@@ -63,7 +63,7 @@ class TestLMStudioIntegration:
 
     def test_connection_error(self):
         """Test that call_lmstudio_api raises connection error when server is unreachable."""
-        with temporarily_set_env_var("LMSTUDIO_API_URL", "http://127.0.0.1:9"):
+        with temporarily_set_env_var("LM-STUDIO_API_URL", "http://127.0.0.1:9"):
             with pytest.raises(AIError) as exc_info:
                 messages = [{"role": "user", "content": "test prompt"}]
                 call_lmstudio_api(model="local-model", messages=messages, temperature=1.0, max_tokens=20)

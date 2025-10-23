@@ -10,13 +10,13 @@ from gac.errors import AIError
 
 def call_lmstudio_api(model: str, messages: list[dict[str, Any]], temperature: float, max_tokens: int) -> str:
     """Call LM Studio's OpenAI-compatible API."""
-    api_url = os.getenv("LMSTUDIO_API_URL", "http://localhost:1234")
+    api_url = os.getenv("LM-STUDIO_API_URL", "http://localhost:1234")
     api_url = api_url.rstrip("/")
 
     url = f"{api_url}/v1/chat/completions"
 
     headers = {"Content-Type": "application/json"}
-    api_key = os.getenv("LMSTUDIO_API_KEY")
+    api_key = os.getenv("LM-STUDIO_API_KEY")
     if api_key:
         headers["Authorization"] = f"Bearer {api_key}"
 
